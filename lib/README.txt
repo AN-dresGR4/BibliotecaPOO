@@ -1,0 +1,1 @@
+Pega aqui el conector mysql-connector-j.jar y añádelo a Libraries en NetBeans.
