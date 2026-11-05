@@ -48,4 +48,25 @@ public class LibroDAO {
         }
         return libros;
     }
+    
+    public List<LibroDTO> buscarPorTitulo(String textoBuscado) throws SQLException {
+        String sql = "SELECT id, titulo, autor, ejemplares FROM libros WHERE titulo LIKE ? ORDER BY id";
+        List<LibroDTO> libros = new ArrayList<>();
+        try (Connection cn = Conexion.obtenerConexion();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setString(1, "%" + textoBuscado + "%");
+            
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String titulo = rs.getString("titulo");
+                    String autor = rs.getString("autor");
+                    int ejemplares = rs.getInt("ejemplares");
+                    LibroDTO libro = new LibroDTO(id, titulo, autor, ejemplares);
+                    libros.add(libro);
+                }
+            }
+        }
+        return libros;
+    }
 }

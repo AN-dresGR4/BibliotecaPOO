@@ -5,7 +5,9 @@
         <group>
             <file>file:/C:/Users/Andres/Documents/NetBeansProjects/BibliotecaPOO/src/principal/Main.java</file>
             <file>file:/C:/Users/Andres/Documents/NetBeansProjects/BibliotecaPOO/src/dto/LibroDTO.java</file>
+            <file>file:/C:/Users/Andres/Documents/NetBeansProjects/BibliotecaPOO/src/dao/LibroDAO.java</file>
             <file>file:/C:/Users/Andres/Documents/NetBeansProjects/BibliotecaPOO/src/conexion/Conexion.java</file>
+            <file>file:/C:/Users/Andres/Documents/NetBeansProjects/BibliotecaPOO/src/vista/FrmLibros.java</file>
         </group>
     </open-files>
 </project-private>
