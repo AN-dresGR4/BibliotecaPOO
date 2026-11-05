@@ -22,6 +22,7 @@ public class FrmLibros extends javax.swing.JFrame {
     public FrmLibros() {
         initComponents();
         libroDAO = new LibroDAO();
+        cargarTabla();
     }
 
     private void cargarTabla() {
@@ -44,8 +45,7 @@ public class FrmLibros extends javax.swing.JFrame {
     
     private void buscarLibros() {
         String textoBuscado = txtBuscar.getText().trim();
-        
-        // Si el campo de búsqueda está vacío, cargar todo normal
+       
         if (textoBuscado.isEmpty()) {
             cargarTabla();
             return;
@@ -72,7 +72,7 @@ public class FrmLibros extends javax.swing.JFrame {
         txtTitulo.setText("");
         txtAutor.setText("");
         txtEjemplares.setText("");
-        txtBuscar.setText(""); // Limpiar también la búsqueda
+        txtBuscar.setText(""); 
         txtTitulo.requestFocus();
     }
 
@@ -262,13 +262,13 @@ public class FrmLibros extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        txtBuscar.setText(""); // Limpiar la caja de búsqueda al presionar 'Consultar Todos'
+        txtBuscar.setText("");
         cargarTabla();
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         limpiarCampos();
-        cargarTabla(); // Restaurar la tabla original al limpiar
+        cargarTabla();
     }//GEN-LAST:event_btnLimpiarActionPerformed
     
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
